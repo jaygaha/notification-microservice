@@ -15,7 +15,7 @@ Email templates are fully dynamic content, it supports full HTML content.
 
 ### Database ER
 
-![alt text](./storage/app/db-er.png?raw=true)
+![alt text](public/images/db-er.png?raw=true)
 
 ### Testing Email Configuration
 
@@ -45,6 +45,10 @@ docker compose exec mail-web sh
 ```
 
 If you don't want to use faker data then please omit ``` --seed ```
+
+## TODO
+
+* API Route (CRUD)
 
 ## Contributing
 
