@@ -46,6 +46,20 @@ docker compose exec mail-web sh
 
 If you don't want to use faker data then please omit ``` --seed ```
 
+### Run Job
+
+Manualy run the schedule
+
+```bash
+php artisan schedule:run
+```
+
+Create a cron job in the server which run every minute.
+
+```bash
+* * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+```
+
 ## TODO
 
 * API Route (CRUD)
