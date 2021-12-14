@@ -1,0 +1,24 @@
+version: "3.5"
+
+services:
+  mail-web:
+    build: .
+    container_name: mail-web
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor/
+    ports:
+      - "9802:9802"
+    command: php -S mail-web:9802 -t public
+
+  mail-db:
+    image: mysql/mysql-server:8.0.23
+    container_name: mail-db
+    ports:
+      - "9882:3306"
+    environment:
+      MYSQL_DATABASE: ${DB_DATABASE}
+      MYSQL_USER: ${DB_USERNAME}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: 12345678
+    command: mysqld --default-authentication-plugin=mysql_native_password
